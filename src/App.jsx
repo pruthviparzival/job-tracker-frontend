@@ -19,7 +19,7 @@ function App() {
       try {
         // You'll need an endpoint to check authentication
         const response = await axios.get(
-          "http://localhost:9000/api/v1/users/me"
+          "https://job-tracker-backend-37r2.onrender.com/api/v1/users/me"
         );
         if (response.data.success) {
           setUser(response.data.payload);

@@ -40,8 +40,8 @@ function Dashboard({ user, setUser }) {
     try {
       setIsLoading(true);
       const url = filterStatus
-        ? `http://localhost:9000/api/v1/entries/filter/${user._id}/${filterStatus}`
-        : `http://localhost:9000/api/v1/entries/read/${user._id}`;
+        ? `https://job-tracker-backend-37r2.onrender.com/api/v1/entries/filter/${user._id}/${filterStatus}`
+        : `https://job-tracker-backend-37r2.onrender.com/api/v1/entries/read/${user._id}`;
 
       const response = await axios.get(url);
       if (response.data.success) {
@@ -65,7 +65,7 @@ function Dashboard({ user, setUser }) {
   const handleAddEntry = async (entryData) => {
     try {
       const response = await axios.post(
-        `http://localhost:9000/api/v1/entries/new/${user._id}`,
+        `https://job-tracker-backend-37r2.onrender.com/api/v1/entries/new/${user._id}`,
         entryData
       );
       if (response.data.success) {
@@ -80,7 +80,7 @@ function Dashboard({ user, setUser }) {
   const handleUpdateEntry = async (entryId, status) => {
     try {
       const response = await axios.patch(
-        `http://localhost:9000/api/v1/entries/edit/${entryId}`,
+        `https://job-tracker-backend-37r2.onrender.com/api/v1/entries/edit/${entryId}`,
         { status }
       );
       if (response.data.success) {
@@ -98,7 +98,7 @@ function Dashboard({ user, setUser }) {
   const handleDeleteEntry = async (entryId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:9000/api/v1/entries/delete/${entryId}`
+        `https://job-tracker-backend-37r2.onrender.com/api/v1/entries/delete/${entryId}`
       );
       if (response.data.success) {
         setEntries(entries.filter((entry) => entry._id !== entryId));
@@ -110,7 +110,9 @@ function Dashboard({ user, setUser }) {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:9000/api/v1/users/logout");
+      await axios.post(
+        "https://job-tracker-backend-37r2.onrender.com/api/v1/users/logout"
+      );
       setUser(null);
       navigate("/login");
     } catch (error) {
