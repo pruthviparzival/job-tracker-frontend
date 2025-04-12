@@ -13,11 +13,9 @@ function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Check if user is logged in on component mount
   useEffect(() => {
     const checkLoggedIn = async () => {
       try {
-        // You'll need an endpoint to check authentication
         const response = await axios.get(
           "https://job-tracker-backend-37r2.onrender.com/api/v1/users/me"
         );

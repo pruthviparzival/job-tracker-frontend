@@ -48,7 +48,7 @@ function Register({ setUser }) {
   return (
     <div className="auth-container">
       <div className="auth-form-container">
-        <h1>Job Tracker</h1>
+        <h1>JobFlow</h1>
         <h2>Create Your Account</h2>
 
         {error && <div className="error-message">{error}</div>}

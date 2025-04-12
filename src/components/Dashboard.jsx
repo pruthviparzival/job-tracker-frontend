@@ -132,7 +132,7 @@ function Dashboard({ user, setUser }) {
     <div className="dashboard">
       <header className="dashboard-header">
         <div className="user-info">
-          <h1>Job Tracker</h1>
+          <h1>JobFlow</h1>
           <p>Welcome, {user.name}</p>
           <p className="email">{user.email}</p>
           <button onClick={handleLogout} className="logout-btn">
